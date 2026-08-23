@@ -64,9 +64,14 @@ Constraints: one method at a time; keep behavior identical; add tests first
 Output: ranked list + 3-step plan, no code yet
 ```
 
-**Optional stretch tasks (build these yourself - not provided):**
-- Custom agent: create `.github/agents/legacy-modernization-agent.agent.md` defining a persona that proposes one small, behavior-preserving refactor at a time and blocks full-file rewrites.
-- Skill: create `.github/skills/safe-refactor-checklist/SKILL.md` capturing a reusable checklist for incremental legacy refactors backed by tests.
-- `AGENTS.md`: optionally add a root-level file summarizing repo conventions for cross-tool agent compatibility (Copilot CLI and other agentic tools read this file).
+**Step-by-step: create these yourself (not provided)**
+1. Custom agent â€” create `.github/agents/legacy-modernization-agent.agent.md`:
+   - Persona: a persona that proposes one small, behavior-preserving refactor at a time and blocks full-file rewrites.
+   - Before writing the file, design its fixed step sequence and any constraints on paper first.
+   - Test it on one small, low-risk task before relying on it for the full lab task.
+2. Skill â€” create `.github/skills/safe-refactor-checklist/SKILL.md`:
+   - Describe when it applies, the concrete conventions for incremental legacy refactors backed by tests, and include one short example.
+   - Reference the skill explicitly in a Copilot Chat prompt and confirm the output follows its conventions.
+3. Root `AGENTS.md` (optional) â€” summarize build/test commands and where the `.github/` customization files live, for cross-tool agent compatibility (Copilot CLI and other agentic tools read this file).
 
 **Enterprise tip:** Enterprise Copilot usage favors small, structured, reusable prompts over long free-form ones. State `Role / Task / Constraints / Output` in under ~5 lines - this keeps token usage low and responses focused, which matters when Copilot is used constantly across a team.
