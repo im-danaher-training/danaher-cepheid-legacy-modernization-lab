@@ -29,7 +29,7 @@ CepheidDx has a legacy order-processing module (`LegacyOrderProcessor`) written 
 ## Hands-on Tasks
 1. Ask Copilot to explain `processOrder` and list the technical debt it finds (duplication, nesting, naming, exception handling).
 2. Ask Copilot to generate a short modernization plan ranked by risk/impact, without applying changes yet.
-3. Ask Copilot for a refactoring prompt that extracts the discount logic into a small `DiscountPolicy` class or method â€” review the proposal before accepting.
+3. Ask Copilot for a refactoring prompt that extracts the discount logic into a small `DiscountPolicy` class or method Ã¢â‚¬â€ review the proposal before accepting.
 4. Apply the refactor to **one** selected area only (do not let Copilot modernize the whole class at once).
 5. Generate or update JUnit 5 tests that cover US-WEST, US-EAST, and default regions with CREDIT/INVOICE/other payment types.
 6. Run the full test suite and confirm behavior is unchanged from before the refactor.
@@ -50,3 +50,23 @@ The refactored code behaves identically to the original for all payment/region c
 
 ## Optional Challenge
 Replace the broad `catch (Exception e)` with a specific, meaningful exception type and add a test that verifies the new behavior.
+
+## Copilot Customization Guide
+
+**Already provided:** `.github/instructions/copilot-instructions.md` â€” enforces small, tested, behavior-preserving changes.
+
+**New prompt file:** `.github/prompts/modernization-plan-prompt.md`
+
+```
+Role: Java maintainer of LegacyOrderProcessor
+Task: List technical debt, rank by risk, propose smallest safe refactor
+Constraints: one method at a time; keep behavior identical; add tests first
+Output: ranked list + 3-step plan, no code yet
+```
+
+**Optional stretch tasks (build these yourself â€” not provided):**
+- Custom agent: create `.github/agents/legacy-modernization-agent.agent.md` defining a persona that proposes one small, behavior-preserving refactor at a time and blocks full-file rewrites.
+- Skill: create `.github/skills/safe-refactor-checklist/SKILL.md` capturing a reusable checklist for incremental legacy refactors backed by tests.
+- `AGENTS.md`: optionally add a root-level file summarizing repo conventions for cross-tool agent compatibility (Copilot CLI and other agentic tools read this file).
+
+**Enterprise tip:** Enterprise Copilot usage favors small, structured, reusable prompts over long free-form ones. State `Role / Task / Constraints / Output` in under ~5 lines â€” this keeps token usage low and responses focused, which matters when Copilot is used constantly across a team.
