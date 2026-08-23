@@ -14,7 +14,6 @@ IntelliJ-first GitHub Copilot lab for Danaher/Cepheid training.
 - Git
 
 ## Validation
-`ash
+```bash
 mvn test
-` 
-
+```
