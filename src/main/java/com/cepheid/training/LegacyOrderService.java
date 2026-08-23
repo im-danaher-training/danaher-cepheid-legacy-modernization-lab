@@ -1,4 +1,4 @@
-﻿package com.cepheid.training;
+package com.cepheid.training;
 
 public class LegacyOrderService {
     public String getStatus() {

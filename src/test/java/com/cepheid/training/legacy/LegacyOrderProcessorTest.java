@@ -1,4 +1,4 @@
-﻿package com.cepheid.training.legacy;
+package com.cepheid.training.legacy;
 
 import org.junit.jupiter.api.Test;
 

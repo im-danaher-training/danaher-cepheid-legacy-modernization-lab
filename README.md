@@ -1,4 +1,4 @@
-﻿# Legacy Java Modernization Lab
+# Legacy Java Modernization Lab
 
 ## Objective
 Learn to use GitHub Copilot inside **IntelliJ IDEA** to complete a realistic Danaher/Cepheid engineering task.
