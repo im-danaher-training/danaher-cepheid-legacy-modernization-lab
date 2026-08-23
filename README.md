@@ -29,7 +29,7 @@ CepheidDx has a legacy order-processing module (`LegacyOrderProcessor`) written 
 ## Hands-on Tasks
 1. Ask Copilot to explain `processOrder` and list the technical debt it finds (duplication, nesting, naming, exception handling).
 2. Ask Copilot to generate a short modernization plan ranked by risk/impact, without applying changes yet.
-3. Ask Copilot for a refactoring prompt that extracts the discount logic into a small `DiscountPolicy` class or method Ã¢â‚¬" review the proposal before accepting.
+3. Ask Copilot for a refactoring prompt that extracts the discount logic into a small `DiscountPolicy` class or method - review the proposal before accepting.
 4. Apply the refactor to **one** selected area only (do not let Copilot modernize the whole class at once).
 5. Generate or update JUnit 5 tests that cover US-WEST, US-EAST, and default regions with CREDIT/INVOICE/other payment types.
 6. Run the full test suite and confirm behavior is unchanged from before the refactor.
